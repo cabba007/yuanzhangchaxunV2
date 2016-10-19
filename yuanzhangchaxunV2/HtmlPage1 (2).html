@@ -1,0 +1,533 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="content/bootstrap.min.css">
+    <link rel="stylesheet" href="content/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="content/jquery-ui.min.css">
+    <script src="Scripts/jquery-1.12.4.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        function fn(q) {
+            $.getJSON("../Service1.svc/GetData", { "q": q }, function (data) {
+                $(".zongrenshu").html(data.zongrenshu);
+                $(".menzhenrenshu").html(data.menzhenrenshu);
+                $(".jizhenrenshu").html(data.jizhenrenshu);
+                $(".zhandangyuebili").html(data.zhandangyuebili);
+                $(".dangyuerencizuidari").html(data.dangyuerencizuidari);
+                $(".menjizhenyaofeibi").html(data.menjizhenyaofeibi);
+                $(".guahaoshouru").html(data.guahaoshouru);
+                $(".riqi").html('您好，以下是<strong>'+data.riqi+'</strong>的统计数据：');
+                $(".menjizhenshouru").html((parseFloat(data.menjizhenshouru)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                $(".zhuyuanshouru").html((parseFloat(data.zhuyuanshouru)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                $(".ruyuanrenshu").html(data.ruyuanrenshu);
+                $(".zaikerenshu").html(data.zaikerenshu);
+                $(".chuyuanrenshu").html(data.chuyuanrenshu);
+                $(".yibaorenshu").html(data.yibaorenshu);
+                $(".xinnongherenshu").html(data.xinnongherenshu);
+                $(".yingshou").html(data.yingshou);
+                $(".shishou").html(data.shishou);
+                $(".youxianyingshou").html(data.youxianyingshou);
+                $(".youxianshishou").html(data.youxianshishou);
+                $(".zhongxiyaoshoufei").html(data.zhongxiyaoshoufei);
+                $(".cailiaofei").html(data.cailiaofei);
+                $(".zhuyuanyaofeibilv").html(data.zhuyuanyaofeibilv);
+                $(".cailiaofeibilv").html(data.cailiaofeibilv);
+                $(".dairukerenshu").html(data.dairukerenshu);
+                $(".zaibianchuangwei").html(data.zaibianchuangwei);
+                $(".jiachuangshu").html(data.jiachuangshu);
+                $(".kongchuangshu").html(data.kongchuangshu);
+                $(".chuangweishiyonglv").html(data.chuangweishiyonglv);
+                $(".menzhenshoushu").html(data.menzhenshoushu);
+                $(".zhuyuanshoushu").html(data.zhuyuanshoushu);
+                $(".zhuyuanshoushu4").html(data.zhuyuanshoushu4);
+                $(".zhuyuanshoushu3").html(data.zhuyuanshoushu3);
+                $(".zhuyuanshoushu2").html(data.zhuyuanshoushu2);
+                $(".zhuyuanshoushu1").html(data.zhuyuanshoushu1);
+                $(".zhuyuanshoushujinji").html(data.zhuyuanshoushujinji);
+                $(".zhuyuanshoushuzeqi").html(data.zhuyuanshoushuzeqi);
+                $(".menzhenshoushudangyuezuidari").html(data.menzhenshoushudangyuezuidari);
+                $(".zhuyuanshoushudangyuezuidari").html(data.zhuyuanshoushudangyuezuidari);
+                $(".hejishoushudangyuezuidari").html(data.hejishoushudangyuezuidari);
+                $(".huayanshu").html(data.huayanshu);
+                $(".huayanfeiyong").html(data.huayanfeiyong);
+                $(".dangtianputongjiuzhenrenshu").html(data.dangtianputongjiuzhenrenshu);
+                $(".dangtianyouxianjiuzhenrenshu").html(data.dangtianyouxianjiuzhenrenshu);
+                $(".zaike30tianyishangrenshu").html(data.zaike30tianyishangrenshu);
+                $(".ctshu").html(data.ctshu);
+                $(".ctfeiyong").html(data.ctfeiyong);
+                $(".tcdshu").html(data.tcdshu);
+                $(".tcdfeiyong").html(data.tcdfeiyong);
+                $(".binglishu").html(data.binglishu);
+                $(".binglifeiyong").html(data.binglifeiyong);
+                $(".changjingshu").html(data.changjingshu);
+                $(".changjingfeiyong").html(data.changjingfeiyong);
+                $(".chaoshengshu").html(data.chaoshengshu);
+                $(".chaoshengfeiyong").html(data.chaoshengfeiyong);
+                $(".cigongzhenshu").html(data.cigongzhenshu);
+                $(".cigongzhenfeiyong").html(data.cigongzhenfeiyong);
+                $(".fangsheshu").html(data.fangsheshu);
+                $(".fangshefeiyong").html(data.fangshefeiyong);
+                $(".feigongnengshu").html(data.feigongnengshu);
+                $(".feigongnengfeiyong").html(data.feigongnengfeiyong);
+                $(".xianzhijingshu").html(data.xianzhijingshu);
+                $(".xianzhijingfeiyong").html(data.xianzhijingfeiyong);
+                $(".xueguanshishu").html(data.xueguanshishu);
+                $(".xueguanshifeiyong").html(data.xueguanshifeiyong);
+                $(".naodiantushu").html(data.naodiantushu);
+                $(".naodiantufeiyong").html(data.naodiantufeiyong);
+                $(".weijingshu").html(data.weijingshu);
+                $(".weijingfeiyong").html(data.weijingfeiyong);
+                $(".xindiantushu").html(data.xindiantushu);
+                $(".xindiantufeiyong").html(data.xindiantufeiyong);
+                $(".bingweirenshu").html(data.bingweirenshu);
+                $(".bingzhongrenshu").html(data.bingzhongrenshu);
+                $(".tijianrenshu").html(data.tijianrenshu);
+                $(".tijianfeiyong").html(data.tijianfeiyong);
+                $(".fangliaoyeshu").html(data.fangliaoyeshu);
+                $(".jidiantushu").html(data.jidiantushu);
+                $(".jidiantufeiyong").html(data.jidiantufeiyong);
+                $(".fangliaorenshu").html(data.fangliaorenshu);
+                $(".fangliaofeiyong").html(data.fangliaofeiyong + '(' + data.fangliaoyeshu + '野数)');
+                $(".zongshouru").html((parseFloat(data.menjizhenshouru) + parseFloat(data.zhuyuanshouru) + parseFloat(data.guahaoshouru)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));                $(".bingzhongbingwei").html(data.bingzhongrenshu + '/' + data.bingweirenshu);
+                $(".menjizhenrenjun").html(((parseFloat(data.menjizhenshouru) + parseFloat(data.guahaoshouru)) / parseFloat(data.menzhenrenshu)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));                $(".zhuyuanrenjun").html((parseFloat(data.zhuyuanshouru) / parseFloat(data.zaikerenshu)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));                $(".zongshouru").css('background-color', '#F1E1FF');                $(".zongshouru").prev().css('background-color', '#F1E1FF');            });
+        }
+
+        $(function () {
+            $(".datepicker").datepicker({
+                onSelect: function (dateText, inst) {
+                    fn(dateText);
+                },
+                dateFormat: 'yy-mm-dd', clearText: '清除', clearStatus: '清除已选日期', closeText: '关闭', closeStatus: '取消选择', prevText: '<上一月', prevStatus: '显示上个月', nextText: '下一月>', nextStatus: '显示下个月', currentText: '今天', currentStatus: '显示本月', monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'], monthNamesShort: ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'], monthStatus: '选择月份', yearStatus: '选择年份', weekHeader: '周', weekStatus: '', dayNames: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'], dayNamesShort: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'], dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'], dayStatus: '设定每周第一天', dateStatus: '选择 m月 d日, DD', firstDay: 1, initStatus: '请选择日期', isRTL: false
+            });
+            $("table").addClass("table table-striped table-condensed");
+            fn("");
+        });
+
+    </script>
+
+    <style>
+        .container {
+            margin-top:10px;
+        }
+        .riqi , td , caption {
+            font-size: 125%;
+            font-family: "Microsoft Yahei",微软雅黑,Arial,sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <p class="col-lg-9 col-md-8 col-sm-7 col-xs-7">
+                <span class="riqi"></span>
+            </p>
+            <div class="col-lg-3 col-md-4 col-sm-5 col-xs-5">
+                <input type="text" class="form-control datepicker" id="input1" placeholder="请选择日期">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <table>
+                    <caption>门急诊</caption>
+                    <tbody>
+                        <tr>
+                            <td>门诊人次</td>
+                            <td class="menzhenrenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>急诊人次</td>
+                            <td class="jizhenrenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>门急诊总人次</td>
+                            <td class="zongrenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>占当月比率</td>
+                            <td class="zhandangyuebili"></td>
+                        </tr>
+                        <tr>
+                            <td>当月人次最大日</td>
+                            <td class="dangyuerencizuidari"></td>
+                        </tr>
+                        <tr>
+                            <td>门急诊药费比</td>
+                            <td class="menjizhenyaofeibi"></td>
+                        </tr>
+                        <tr>
+                            <td>门急诊收费</td>
+                            <td class="menjizhenshouru"></td>
+                        </tr>
+                        <tr>
+                            <td>门急诊人均收费</td>
+                            <td class="menjizhenrenjun"></td>
+                        </tr>
+                        <tr>
+                            <td>挂号收费</td>
+                            <td class="guahaoshouru"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-8 visible-lg col-md-8 visible-md">
+                <table>
+                    <caption>住院</caption>
+                    <tbody>
+                        <tr>
+                            <td>入院人数</td>
+                            <td class="ruyuanrenshu"></td>
+                            <td>医保人数</td>
+                            <td class="yibaorenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>出院人数</td>
+                            <td class="chuyuanrenshu"></td>
+                            <td>新农合人数</td>
+                            <td class="xinnongherenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>在科人数</td>
+                            <td class="zaikerenshu"></td>
+                            <td>住院部药费比</td>
+                            <td class="zhuyuanyaofeibilv"></td>
+                        </tr>
+                        <tr>
+                            <td>待入科</td>
+                            <td class="dairukerenshu"></td>
+                            <td>抗生素率</td>
+                            <td class="kangshengsulv"></td>
+                        </tr>
+                        <tr>
+                            <td>空床数</td>
+                            <td class="kongchuangshu"></td>
+                            <td>材料费比例</td>
+                            <td class="cailiaofeibilv"></td>
+                        </tr>
+                        <tr>
+                            <td>加床数</td>
+                            <td class="jiachuangshu"></td>
+                            <td>病重人数 / 病危人数</td>
+                            <td class="bingzhongbingwei"></td>
+                        </tr>
+                        <tr>
+                            <td>床位使用率</td>
+                            <td class="chuangweishiyonglv"></td>
+                            <td>在科30天以上人数</td>
+                            <td class="zaike30tianyishangrenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>住院收费</td>
+                            <td class="zhuyuanshouru"></td>
+                            <td>住院人均收费</td>
+                            <td class="zhuyuanrenjun"></td>
+                        </tr>
+                        <tr>
+                            <td>全院总收费</td>
+                            <td class="zongshouru"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-12 visible-sm col-xs-12 visible-xs">
+                <table>
+                    <caption>住院</caption>
+                    <tbody>
+                        <tr>
+                            <td>入院人数</td>
+                            <td class="ruyuanrenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>医保人数</td>
+                            <td class="yibaorenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>出院人数</td>
+                            <td class="chuyuanrenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>新农合人数</td>
+                            <td class="xinnongherenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>在科人数</td>
+                            <td class="zaikerenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>住院部药费比</td>
+                            <td class="zhuyuanyaofeibilv"></td>
+                        </tr>
+                        <tr>
+                            <td>待入科</td>
+                            <td class="dairukerenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>抗生素率</td>
+                            <td class="kangshengsulv"></td>
+                        </tr>
+                        <tr>
+                            <td>空床数</td>
+                            <td class="kongchuangshu"></td>
+                        </tr>
+                        <tr>
+                            <td>材料费比例</td>
+                            <td class="cailiaofeibilv"></td>
+                        </tr>
+                        <tr>
+                            <td>加床数</td>
+                            <td class="jiachuangshu"></td>
+                        </tr>
+                        <tr>
+                            <td>病重人数 / 病危人数</td>
+                            <td class="bingzhongbingwei"></td>
+                        </tr>
+                        <tr>
+                            <td>床位使用率</td>
+                            <td class="chuangweishiyonglv"></td>
+                        </tr>
+                        <tr>
+                            <td>在科30天以上人数</td>
+                            <td class="zaike30tianyishangrenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>住院收费</td>
+                            <td class="zhuyuanshouru"></td>
+                        </tr>
+                        <tr>
+                            <td>住院人均收费</td>
+                            <td class="zhuyuanrenjun"></td>
+                        </tr>
+                        <tr>
+                            <td>全院总收费</td>
+                            <td class="zongshouru"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="visible-md visible-lg">
+            <table>
+                <caption>医技</caption>
+                <tbody>
+                    <tr>
+                        <td>超声</td>
+                        <td class="chaoshengshu"></td>
+                        <td class="chaoshengfeiyong"></td>
+                        <td>磁共振</td>
+                        <td class="cigongzhenshu"></td>
+                        <td class="cigongzhenfeiyong"></td>
+                        <td>胃镜</td>
+                        <td class="weijingshu"></td>
+                        <td class="weijingfeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>TCD</td>
+                        <td class="tcdshu"></td>
+                        <td class="tcdfeiyong"></td>
+                        <td>CT</td>
+                        <td class="ctshu"></td>
+                        <td class="ctfeiyong"></td>
+                        <td>肠镜</td>
+                        <td class="changjingshu"></td>
+                        <td class="changjingfeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>脑电图</td>
+                        <td class="naodiantushu"></td>
+                        <td class="naodiantufeiyong"></td>
+                        <td>放射</td>
+                        <td class="fangsheshu"></td>
+                        <td class="fangshefeiyong"></td>
+                        <td>肺功能</td>
+                        <td class="feigongnengshu"></td>
+                        <td class="feigongnengfeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>心电图</td>
+                        <td class="xindiantushu"></td>
+                        <td class="xindiantufeiyong"></td>
+                        <td>血管室</td>
+                        <td class="xueguanshishu"></td>
+                        <td class="xueguanshifeiyong"></td>
+                        <td>病理</td>
+                        <td class="binglishu"></td>
+                        <td class="binglifeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>肌电图</td>
+                        <td class="jidiantushu"></td>
+                        <td class="jidiantufeiyong"></td>
+                        <td>纤支镜</td>
+                        <td class="xianzhijingshu"></td>
+                        <td class="xianzhijingfeiyong"></td>
+                        <td>放疗</td>
+                        <td class="fangliaorenshu"></td>
+                        <td class="fangliaofeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>化验</td>
+                        <td class="huayanshu"></td>
+                        <td class="huayanfeiyong"></td>
+                        <td>体检</td>
+                        <td class="tijianrenshu"></td>
+                        <td class="tijianfeiyong"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="visible-sm visible-xs">
+            <table>
+                <caption>医技</caption>
+                <tbody>
+                    <tr>
+                        <td>超声</td>
+                        <td class="chaoshengshu"></td>
+                        <td class="chaoshengfeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>磁共振</td>
+                        <td class="cigongzhenshu"></td>
+                        <td class="cigongzhenfeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>胃镜</td>
+                        <td class="weijingshu"></td>
+                        <td class="weijingfeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>TCD</td>
+                        <td class="tcdshu"></td>
+                        <td class="tcdfeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>CT</td>
+                        <td class="ctshu"></td>
+                        <td class="ctfeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>肠镜</td>
+                        <td class="changjingshu"></td>
+                        <td class="changjingfeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>脑电图</td>
+                        <td class="naodiantushu"></td>
+                        <td class="naodiantufeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>放射</td>
+                        <td class="fangsheshu"></td>
+                        <td class="fangshefeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>肺功能</td>
+                        <td class="feigongnengshu"></td>
+                        <td class="feigongnengfeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>心电图</td>
+                        <td class="xindiantushu"></td>
+                        <td class="xindiantufeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>血管室</td>
+                        <td class="xueguanshishu"></td>
+                        <td class="xueguanshifeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>病理</td>
+                        <td class="binglishu"></td>
+                        <td class="binglifeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>肌电图</td>
+                        <td class="jidiantushu"></td>
+                        <td class="jidiantufeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>纤支镜</td>
+                        <td class="xianzhijingshu"></td>
+                        <td class="xianzhijingfeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>放疗</td>
+                        <td class="fangliaorenshu"></td>
+                        <td class="fangliaofeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>化验</td>
+                        <td class="huayanshu"></td>
+                        <td class="huayanfeiyong"></td>
+                    </tr>
+                    <tr>
+                        <td>体检</td>
+                        <td class="tijianrenshu"></td>
+                        <td class="tijianfeiyong"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="visible-sm visible-xs">
+            <table>
+                <caption>手术</caption>
+                <tbody>
+                    <tr>
+                        <td>住院手术</td>
+                        <td class="zhuyuanshoushu"></td>
+                    </tr>
+                    <tr>
+                        <td>Ⅳ</td>
+                        <td class="zhuyuanshoushu4"></td>
+                    </tr>
+                    <tr>
+                        <td>Ⅲ</td>
+                        <td class="zhuyuanshoushu3"></td>
+                    </tr>
+                    <tr>
+                        <td>Ⅱ</td>
+                        <td class="zhuyuanshoushu2"></td>
+                    </tr>
+                    <tr>
+                        <td>Ⅰ</td>
+                        <td class="zhuyuanshoushu1"></td>
+                    </tr>
+                    <tr>
+                        <td>急诊</td>
+                        <td class="zhuyuanshoushujinji"></td>
+                    </tr>
+                    <tr>
+                        <td>择期</td>
+                        <td class="zhuyuanshoushuzeqi"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="visible-md visible-lg">
+            <table>
+                <caption>手术</caption>
+                <tbody>
+                    <tr>
+                        <td>住院手术</td>
+                        <td class="zhuyuanshoushu"></td>
+                        <td>Ⅳ</td>
+                        <td class="zhuyuanshoushu4"></td>
+                        <td>Ⅲ</td>
+                        <td class="zhuyuanshoushu3"></td>
+                        <td>Ⅱ</td>
+                        <td class="zhuyuanshoushu2"></td>
+                        <td>Ⅰ</td>
+                        <td class="zhuyuanshoushu1"></td>
+                        <td>急诊</td>
+                        <td class="zhuyuanshoushujinji"></td>
+                        <td>择期</td>
+                        <td class="zhuyuanshoushuzeqi"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

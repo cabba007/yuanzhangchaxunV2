@@ -1,0 +1,594 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="content/bootstrap.min.css">
+    <link rel="stylesheet" href="content/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="content/jquery-ui.min.css">
+    <script src="Scripts/jquery-1.12.4.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        function fnn(data) {
+            var n = 0;
+            var htmls = [''];            var htmls2 = [''];
+            if (data.chaoshengshu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>超声</td><td>" + data.chaoshengshu + "</td><td>" + data.chaoshengfeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>超声</td><td>" + data.chaoshengshu + "</td><td>" + data.chaoshengfeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>超声</td><td>" + data.chaoshengshu + "</td><td>" + data.chaoshengfeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>超声</td><td>" + data.chaoshengshu + "</td><td>" + data.chaoshengfeiyong + "</td></tr>");
+            }
+            if (data.cigongzhenshu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>磁共振</td><td>" + data.cigongzhenshu + "</td><td>" + data.cigongzhenfeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>磁共振</td><td>" + data.cigongzhenshu + "</td><td>" + data.cigongzhenfeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>磁共振</td><td>" + data.cigongzhenshu + "</td><td>" + data.cigongzhenfeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>磁共振</td><td>" + data.cigongzhenshu + "</td><td>" + data.cigongzhenfeiyong + "</td></tr>");
+            }
+            if (data.weijingshu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>胃镜</td><td>" + data.weijingshu + "</td><td>" + data.weijingfeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>胃镜</td><td>" + data.weijingshu + "</td><td>" + data.weijingfeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>胃镜</td><td>" + data.weijingshu + "</td><td>" + data.weijingfeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>胃镜</td><td>" + data.weijingshu + "</td><td>" + data.weijingfeiyong + "</td></tr>");
+            }
+            if (data.ctshu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>CT</td><td>" + data.ctshu + "</td><td>" + data.ctfeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>CT</td><td>" + data.ctshu + "</td><td>" + data.ctfeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>CT</td><td>" + data.ctshu + "</td><td>" + data.ctfeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>CT</td><td>" + data.ctshu + "</td><td>" + data.ctfeiyong + "</td></tr>");
+            }
+            if (data.tcdshu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>TCD</td><td>" + data.tcdshu + "</td><td>" + data.tcdfeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>TCD</td><td>" + data.tcdshu + "</td><td>" + data.tcdfeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>TCD</td><td>" + data.tcdshu + "</td><td>" + data.tcdfeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>TCD</td><td>" + data.tcdshu + "</td><td>" + data.tcdfeiyong + "</td></tr>");
+            }
+            if (data.changjingshu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>肠镜</td><td>" + data.changjingshu + "</td><td>" + data.changjingfeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>肠镜</td><td>" + data.changjingshu + "</td><td>" + data.changjingfeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>肠镜</td><td>" + data.changjingshu + "</td><td>" + data.changjingfeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>肠镜</td><td>" + data.changjingshu + "</td><td>" + data.changjingfeiyong + "</td></tr>");
+            }
+            if (data.naodiantushu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>脑电图</td><td>" + data.naodiantushu + "</td><td>" + data.naodiantufeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>脑电图</td><td>" + data.naodiantushu + "</td><td>" + data.naodiantufeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>脑电图</td><td>" + data.naodiantushu + "</td><td>" + data.naodiantufeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>脑电图</td><td>" + data.naodiantushu + "</td><td>" + data.naodiantufeiyong + "</td></tr>");
+            }
+            if (data.fangsheshu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>放射</td><td>" + data.fangsheshu + "</td><td>" + data.fangshefeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>放射</td><td>" + data.fangsheshu + "</td><td>" + data.fangshefeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>放射</td><td>" + data.fangsheshu + "</td><td>" + data.fangshefeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>放射</td><td>" + data.fangsheshu + "</td><td>" + data.fangshefeiyong + "</td></tr>");
+            }
+            if (data.feigongnengshu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>肺功能</td><td>" + data.feigongnengshu + "</td><td>" + data.feigongnengfeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>肺功能</td><td>" + data.feigongnengshu + "</td><td>" + data.feigongnengfeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>肺功能</td><td>" + data.feigongnengshu + "</td><td>" + data.feigongnengfeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>肺功能</td><td>" + data.feigongnengshu + "</td><td>" + data.feigongnengfeiyong + "</td></tr>");
+            }
+            if (data.xindiantushu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>心电图</td><td>" + data.xindiantushu + "</td><td>" + data.xindiantufeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>心电图</td><td>" + data.xindiantushu + "</td><td>" + data.xindiantufeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>心电图</td><td>" + data.xindiantushu + "</td><td>" + data.xindiantufeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<td>心电图</td><td>" + data.xindiantushu + "</td><td>" + data.xindiantufeiyong + "</td></tr>");
+            }
+            if (data.xueguanshishu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>血管室</td><td>" + data.xueguanshishu + "</td><td>" + data.xueguanshifeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>血管室</td><td>" + data.xueguanshishu + "</td><td>" + data.xueguanshifeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>血管室</td><td>" + data.xueguanshishu + "</td><td>" + data.xueguanshifeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>血管室</td><td>" + data.xueguanshishu + "</td><td>" + data.xueguanshifeiyong + "</td></tr>");
+            }
+            if (data.binglishu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>病理</td><td>" + data.binglishu + "</td><td>" + data.binglifeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>病理</td><td>" + data.binglishu + "</td><td>" + data.binglifeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>病理</td><td>" + data.binglishu + "</td><td>" + data.binglifeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>病理</td><td>" + data.binglishu + "</td><td>" + data.binglifeiyong + "</td></tr>");
+            }
+            if (data.jidiantushu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>肌电图</td><td>" + data.jidiantushu + "</td><td>" + data.jidiantufeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>肌电图</td><td>" + data.jidiantushu + "</td><td>" + data.jidiantufeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>肌电图</td><td>" + data.jidiantushu + "</td><td>" + data.jidiantufeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>肌电图</td><td>" + data.jidiantushu + "</td><td>" + data.jidiantufeiyong + "</td></tr>");
+            }
+            if (data.xianzhijingshu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>纤支镜</td><td>" + data.xianzhijingshu + "</td><td>" + data.xianzhijingfeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>纤支镜</td><td>" + data.xianzhijingshu + "</td><td>" + data.xianzhijingfeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>纤支镜</td><td>" + data.xianzhijingshu + "</td><td>" + data.xianzhijingfeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>纤支镜</td><td>" + data.xianzhijingshu + "</td><td>" + data.xianzhijingfeiyong + "</td></tr>");
+            }
+            if (data.fangliaorenshu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>放疗</td><td>" + data.fangliaorenshu + "</td><td>" + data.fangliaofeiyong + '(' + data.fangliaoyeshu + '野数)' + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>放疗</td><td>" + data.fangliaorenshu + "</td><td>" + data.fangliaofeiyong + '(' + data.fangliaoyeshu + '野数)' + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>放疗</td><td>" + data.fangliaorenshu + "</td><td>" + data.fangliaofeiyong + '(' + data.fangliaoyeshu + '野数)' + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>放疗</td><td>" + data.fangliaorenshu + "</td><td>" + data.fangliaofeiyong + '(' + data.fangliaoyeshu + '野数)' + "</td></tr>");
+            }
+            if (data.huayanshu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>化验</td><td>" + data.huayanshu + "</td><td>" + data.huayanfeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>化验</td><td>" + data.huayanshu + "</td><td>" + data.huayanfeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>化验</td><td>" + data.huayanshu + "</td><td>" + data.huayanfeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>化验</td><td>" + data.huayanshu + "</td><td>" + data.huayanfeiyong + "</td></tr>");
+            }
+            if (data.tijianrenshu != '0') {
+                if (n % 3 == 0) {
+                    htmls.push("<tr><td>体检</td><td>" + data.tijianrenshu + "</td><td>" + data.tijianfeiyong + "</td>");
+                }
+                else if (n % 3 == 2) {
+                    htmls.push("<td>体检</td><td>" + data.tijianrenshu + "</td><td>" + data.tijianfeiyong + "</td></tr>");
+                }
+                else {
+                    htmls.push("<td>体检</td><td>" + data.tijianrenshu + "</td><td>" + data.tijianfeiyong + "</td>");
+                }
+                n++;
+                htmls2.push("<tr><td>体检</td><td>" + data.tijianrenshu + "</td><td>" + data.tijianfeiyong + "</td></tr>");
+            }
+            if (n % 3 != 0) {
+                htmls.push("</tr>");
+            }
+            $("#tbody1").empty();
+            $('#tbody1').html(htmls.join(''));
+            $("#tbody2").empty();
+            $('#tbody2').html(htmls2.join(''));
+        }
+        function fn(q) {
+            $.getJSON("../Service1.svc/GetData", { "q": q }, function (data) {
+                $(".zongrenshu").html(data.zongrenshu);
+                $(".menzhenrenshu").html(data.menzhenrenshu);
+                $(".jizhenrenshu").html(data.jizhenrenshu);
+                $(".zhandangyuebili").html(data.zhandangyuebili);
+                $(".dangyuerencizuidari").html(data.dangyuerencizuidari);
+                $(".menjizhenyaofeibi").html(data.menjizhenyaofeibi);
+                $(".guahaoshouru").html(data.guahaoshouru);
+                $(".riqi").html('<strong>'+data.riqi+'</strong>的统计数据：');
+                $(".menjizhenshouru").html((parseFloat(data.menjizhenshouru)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                $(".zhuyuanshouru").html((parseFloat(data.zhuyuanshouru)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                $(".ruyuanrenshu").html(data.ruyuanrenshu);
+                $(".zaikerenshu").html(data.zaikerenshu);
+                $(".chuyuanrenshu").html(data.chuyuanrenshu);
+                $(".yibaorenshu").html(data.yibaorenshu);
+                $(".xinnongherenshu").html(data.xinnongherenshu);
+                $(".yingshou").html(data.yingshou);
+                $(".shishou").html(data.shishou);
+                $(".youxianyingshou").html(data.youxianyingshou);
+                $(".youxianshishou").html(data.youxianshishou);
+                $(".zhongxiyaoshoufei").html(data.zhongxiyaoshoufei);
+                $(".cailiaofei").html(data.cailiaofei);
+                $(".zhuyuanyaofeibilv").html(data.zhuyuanyaofeibilv);
+                $(".cailiaofeibilv").html(data.cailiaofeibilv);
+                $(".dairukerenshu").html(data.dairukerenshu);
+                $(".zaibianchuangwei").html(data.zaibianchuangwei);
+                $(".jiachuangshu").html(data.jiachuangshu);
+                $(".kongchuangshu").html(data.kongchuangshu);
+                $(".chuangweishiyonglv").html(data.chuangweishiyonglv);
+                $(".menzhenshoushu").html(data.menzhenshoushu);
+                $(".zhuyuanshoushu").html(data.zhuyuanshoushu);
+                $(".zhuyuanshoushu4").html(data.zhuyuanshoushu4);
+                $(".zhuyuanshoushu3").html(data.zhuyuanshoushu3);
+                $(".zhuyuanshoushu2").html(data.zhuyuanshoushu2);
+                $(".zhuyuanshoushu1").html(data.zhuyuanshoushu1);
+                $(".zhuyuanshoushujinji").html(data.zhuyuanshoushujinji);
+                $(".zhuyuanshoushuzeqi").html(data.zhuyuanshoushuzeqi);
+                $(".menzhenshoushudangyuezuidari").html(data.menzhenshoushudangyuezuidari);
+                $(".zhuyuanshoushudangyuezuidari").html(data.zhuyuanshoushudangyuezuidari);
+                $(".hejishoushudangyuezuidari").html(data.hejishoushudangyuezuidari);
+                $(".dangtianputongjiuzhenrenshu").html(data.dangtianputongjiuzhenrenshu);
+                $(".dangtianyouxianjiuzhenrenshu").html(data.dangtianyouxianjiuzhenrenshu);
+                $(".zaike30tianyishangrenshu").html(data.zaike30tianyishangrenshu);
+                $(".bingweirenshu").html(data.bingweirenshu);
+                $(".bingzhongrenshu").html(data.bingzhongrenshu);
+                $(".zongshouru").html((parseFloat(data.menjizhenshouru) + parseFloat(data.zhuyuanshouru) + parseFloat(data.guahaoshouru)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));                $(".bingzhongbingwei").html(data.bingzhongrenshu + '/' + data.bingweirenshu);
+                $(".menjizhenrenjun").html(((parseFloat(data.menjizhenshouru) + parseFloat(data.guahaoshouru)) / parseFloat(data.menzhenrenshu)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));                $(".zhuyuanrenjun").html((parseFloat(data.zhuyuanshouru) / parseFloat(data.zaikerenshu)).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));                fnn(data);            });
+        }
+
+        $(function () {
+            $(".datepicker").datepicker({
+                onSelect: function (dateText, inst) {
+                    fn(dateText);
+                },
+                dateFormat: 'yy-mm-dd', clearText: '清除', clearStatus: '清除已选日期', closeText: '关闭', closeStatus: '取消选择', prevText: '<上一月', prevStatus: '显示上个月', nextText: '下一月>', nextStatus: '显示下个月', currentText: '今天', currentStatus: '显示本月', monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'], monthNamesShort: ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'], monthStatus: '选择月份', yearStatus: '选择年份', weekHeader: '周', weekStatus: '', dayNames: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'], dayNamesShort: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'], dayNamesMin: ['日', '一', '二', '三', '四', '五', '六'], dayStatus: '设定每周第一天', dateStatus: '选择 m月 d日, DD', firstDay: 1, initStatus: '请选择日期', isRTL: false
+            });
+            $("table").addClass("table table-striped table-condensed");
+            fn("");
+        });
+
+    </script>
+
+    <style>
+        .container {
+            margin-top:10px;
+        }
+        .riqi , td , caption {
+            font-size: 125%;
+            font-family: "Microsoft Yahei",微软雅黑,Arial,sans-serif;
+        }
+        caption {
+            background-color:#F9E9FF;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row visible-lg visible-md" style="margin-bottom:5px">
+            <p class="col-lg-9 col-md-9">
+                <span class="riqi"></span>
+            </p>
+            <div class="col-lg-3 col-md-3">
+                <input type="text" class="form-control datepicker" id="input1" placeholder="请选择日期">
+            </div>
+        </div>
+        <div class="visible-sm visible-xs" style="margin-bottom:5px">
+            <p>
+                <span class="riqi"></span>
+            </p>
+            <div class="col-sm-offset-6">
+                <input type="text" class="form-control datepicker" id="input1" placeholder="请选择日期">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <table>
+                    <caption>门急诊</caption>
+                    <tbody>
+                        <tr>
+                            <td>门诊人次</td>
+                            <td class="menzhenrenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>急诊人次</td>
+                            <td class="jizhenrenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>门急诊总人次</td>
+                            <td class="zongrenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>占当月比率%</td>
+                            <td class="zhandangyuebili"></td>
+                        </tr>
+                        <tr>
+                            <td>当月人次最大日</td>
+                            <td class="dangyuerencizuidari"></td>
+                        </tr>
+                        <tr>
+                            <td>门急诊药费比%</td>
+                            <td class="menjizhenyaofeibi"></td>
+                        </tr>
+                        <tr>
+                            <td>门急诊收费</td>
+                            <td class="menjizhenshouru"></td>
+                        </tr>
+                        <tr>
+                            <td>门急诊人均收费</td>
+                            <td class="menjizhenrenjun"></td>
+                        </tr>
+                        <tr>
+                            <td>挂号收费</td>
+                            <td class="guahaoshouru"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-8 visible-lg col-md-8 visible-md">
+                <table>
+                    <caption>住院</caption>
+                    <tbody>
+                        <tr>
+                            <td>入院人数</td>
+                            <td class="ruyuanrenshu"></td>
+                            <td>医保人数</td>
+                            <td class="yibaorenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>出院人数</td>
+                            <td class="chuyuanrenshu"></td>
+                            <td>新农合人数</td>
+                            <td class="xinnongherenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>在科人数</td>
+                            <td class="zaikerenshu"></td>
+                            <td>住院部药费比%</td>
+                            <td class="zhuyuanyaofeibilv"></td>
+                        </tr>
+                        <tr>
+                            <td>待入科</td>
+                            <td class="dairukerenshu"></td>
+                            <td>抗生素率</td>
+                            <td class="kangshengsulv"></td>
+                        </tr>
+                        <tr>
+                            <td>空床数</td>
+                            <td class="kongchuangshu"></td>
+                            <td>材料费比例%</td>
+                            <td class="cailiaofeibilv"></td>
+                        </tr>
+                        <tr>
+                            <td>加床数</td>
+                            <td class="jiachuangshu"></td>
+                            <td>病重人数 / 病危人数</td>
+                            <td class="bingzhongbingwei"></td>
+                        </tr>
+                        <tr>
+                            <td>床位使用率%</td>
+                            <td class="chuangweishiyonglv"></td>
+                            <td>在科30天以上人数</td>
+                            <td class="zaike30tianyishangrenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>住院收费</td>
+                            <td class="zhuyuanshouru"></td>
+                            <td>住院人均收费</td>
+                            <td class="zhuyuanrenjun"></td>
+                        </tr>
+                        <tr>
+                            <td>全院总收费</td>
+                            <td class="zongshouru"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-12 visible-sm col-xs-12 visible-xs">
+                <table>
+                    <caption>住院</caption>
+                    <tbody>
+                        <tr>
+                            <td>入院人数</td>
+                            <td class="ruyuanrenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>出院人数</td>
+                            <td class="chuyuanrenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>在科人数</td>
+                            <td class="zaikerenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>待入科</td>
+                            <td class="dairukerenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>医保人数</td>
+                            <td class="yibaorenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>新农合人数</td>
+                            <td class="xinnongherenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>加床数</td>
+                            <td class="jiachuangshu"></td>
+                        </tr>
+                        <tr>
+                            <td>空床数</td>
+                            <td class="kongchuangshu"></td>
+                        </tr>
+                        <tr>
+                            <td>病重人数 / 病危人数</td>
+                            <td class="bingzhongbingwei"></td>
+                        </tr>
+                        <tr>
+                            <td>在科30天以上人数</td>
+                            <td class="zaike30tianyishangrenshu"></td>
+                        </tr>
+                        <tr>
+                            <td>床位使用率%</td>
+                            <td class="chuangweishiyonglv"></td>
+                        </tr>
+                        <tr>
+                            <td>住院部药费比%</td>
+                            <td class="zhuyuanyaofeibilv"></td>
+                        </tr>
+                        <tr>
+                            <td>抗生素率</td>
+                            <td class="kangshengsulv"></td>
+                        </tr>
+                        <tr>
+                            <td>材料费比例%</td>
+                            <td class="cailiaofeibilv"></td>
+                        </tr>
+                        <tr>
+                            <td>住院收费</td>
+                            <td class="zhuyuanshouru"></td>
+                        </tr>
+                        <tr>
+                            <td>住院人均收费</td>
+                            <td class="zhuyuanrenjun"></td>
+                        </tr>
+                        <tr>
+                            <td>全院总收费</td>
+                            <td class="zongshouru"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="visible-md visible-lg">
+            <table>
+                <caption>医技(人次/费用)</caption>
+                <tbody id="tbody1">
+                </tbody>
+            </table>
+        </div>
+        <div class="visible-sm visible-xs">
+            <table>
+                <caption>医技(人次/费用)</caption>
+                <tbody id="tbody2">
+                </tbody>
+            </table>
+        </div>
+        <div class="visible-sm visible-xs">
+            <table>
+                <caption>手术</caption>
+                <tbody>
+                    <tr>
+                        <td>住院手术</td>
+                        <td class="zhuyuanshoushu"></td>
+                    </tr>
+                    <tr>
+                        <td>Ⅳ</td>
+                        <td class="zhuyuanshoushu4"></td>
+                    </tr>
+                    <tr>
+                        <td>Ⅲ</td>
+                        <td class="zhuyuanshoushu3"></td>
+                    </tr>
+                    <tr>
+                        <td>Ⅱ</td>
+                        <td class="zhuyuanshoushu2"></td>
+                    </tr>
+                    <tr>
+                        <td>Ⅰ</td>
+                        <td class="zhuyuanshoushu1"></td>
+                    </tr>
+                    <tr>
+                        <td>急诊</td>
+                        <td class="zhuyuanshoushujinji"></td>
+                    </tr>
+                    <tr>
+                        <td>择期</td>
+                        <td class="zhuyuanshoushuzeqi"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="visible-md visible-lg">
+            <table>
+                <caption>手术</caption>
+                <tbody>
+                    <tr>
+                        <td>住院手术</td>
+                        <td class="zhuyuanshoushu"></td>
+                        <td>Ⅳ</td>
+                        <td class="zhuyuanshoushu4"></td>
+                        <td>Ⅲ</td>
+                        <td class="zhuyuanshoushu3"></td>
+                        <td>Ⅱ</td>
+                        <td class="zhuyuanshoushu2"></td>
+                        <td>Ⅰ</td>
+                        <td class="zhuyuanshoushu1"></td>
+                        <td>急诊</td>
+                        <td class="zhuyuanshoushujinji"></td>
+                        <td>择期</td>
+                        <td class="zhuyuanshoushuzeqi"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
